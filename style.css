@@ -1,0 +1,167 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    color: rgba(86, 139, 97, 0.91);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    width: 100%;
+    margin: 3vh 0;
+}
+
+img {
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    letter-spacing: .05em;
+    line-height: 1.4rem;
+}
+h2{
+    line-height: 3rem;
+}
+
+/* topbar */
+header {
+    height: 10vh;
+}
+
+header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header li {
+    margin: 2vh 3%;
+}
+
+header h2 {
+    letter-spacing: .1em;
+}
+
+/* main */
+main {
+    height: 100vh;
+    width: 100%;
+}
+
+/* 換圖輪播 全部寬度輪播*/
+@-webkit-keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-250px * 7));
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-250px * 7));
+    }
+}
+
+.slider {
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+    height: 100vh;
+    margin: 3vh auto;
+    overflow: hidden;
+    position: relative;
+    /* width: 960px; */
+}
+
+.slider::before,
+.slider::after {
+    /* background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%); */
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+}
+
+.slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+
+.slider::before {
+    left: 0;
+    top: 0;
+}
+
+.slider .slide-track {
+    -webkit-animation: scroll 40s linear infinite;
+    animation: scroll 40s linear infinite;
+    display: flex;
+    width: calc(250px * 14);
+}
+
+.slider .slide {
+    height: 100px;
+    width: 250px;
+}
+
+/* about */
+#about {
+    height: 100vh;
+}
+#about ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+/* products */
+#products {
+    height: 100vh;
+}
+#products ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+/* map */
+#map {
+    height: 100vh;
+}
+#map ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+/* footer */
+footer {
+    height: 10vh;
+    letter-spacing: .1em;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
